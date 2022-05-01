@@ -1,0 +1,223 @@
+$bgColor: #f2f2f2;
+$borderColor: #bdbdbd;
+$fonts: "Roboto", "Noto Sans KR";
+
+body {
+  background-color: #fff;
+  padding-top: 100px;
+}
+
+.section {
+  width: 1020px;
+  background-color: $bgColor;
+  margin: 0 auto;
+  border: 1px solid $borderColor;
+  border-radius: 10px;
+  padding: 0 28px 31px;
+  margin-bottom: 166px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+
+  .txt-tit {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+    text-align: center;
+    width: 650px;
+    border-bottom: 2px solid $borderColor;
+    padding: 41px 0 37px;
+    margin: 0 auto;
+  }
+
+  .btns-nav {
+    width: 372px;
+    margin: 28px auto;
+    ul {
+      display: flex;
+      justify-content: space-around;
+      color: #828282;
+      li button {
+        color: #828282;
+      }
+      li:nth-child(1) button {
+        font-weight: 900;
+        color: #000;
+      }
+    }
+  }
+}
+
+.txt-tit,
+.btns-nav {
+  font-family: nth($fonts, 1);
+}
+
+.wrapper {
+  width: 1015px;
+  background-color: #fff;
+  padding: 26px;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 23px;
+  border: 1px solid $borderColor;
+  border-radius: 10px;
+  margin: 0 auto;
+}
+
+.movie-box {
+  width: 220px;
+  background-color: #fff;
+  border: 1px solid $borderColor;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 100%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  .movie-tit {
+    font-family: nth($fonts, 2);
+    font-weight: 900;
+    line-height: 23px;
+    padding-left: 20px;
+  }
+  .first-row-wrap {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  img {
+    width: 180px;
+    height: 250px;
+    border: 1px solid #bdbdbd;
+    border-radius: 10px;
+    margin: 20px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  }
+  dl {
+    margin: 10px 20px 20px;
+    font-size: 13px;
+    line-height: 19px;
+    font-weight: 400;
+
+    dt {
+      color: #828282;
+      float: left;
+      margin-right: 5px;
+    }
+
+    dd {
+      color: #000;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+
+      &.rating::before {
+        content: "";
+        display: inline-block;
+        background: url("../images/별점이미지.png") no-repeat center;
+        width: 14px;
+        height: 14px;
+        margin-right: 4px;
+        vertical-align: bottom;
+        padding-bottom: 5px;
+      }
+    }
+  }
+  button {
+    width: 50%;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    border-top: 1px solid $borderColor;
+    padding: 9px;
+    box-sizing: border-box;
+    background-color: $bgColor;
+    position: relative;
+    font-family: nth($fonts, 2);
+    &.btn-book {
+      border-right: 1px solid $borderColor;
+    }
+    &.btn-preview::before {
+      content: "";
+      display: inline-block;
+      background: url("../images/아이콘_재생.png") no-repeat center/15px;
+      width: 16px;
+      height: 16px;
+      margin-right: 3px;
+      vertical-align: sub;
+      padding-bottom: 2px;
+    }
+  }
+}
+
+.footer {
+  width: 100%;
+  background-color: $bgColor;
+  font-family: nth($fonts, 1);
+  margin: 0;
+  padding: 0;
+  .footer-wrapper {
+    width: 1003px;
+    margin: 0 auto;
+    .logos,
+    .info {
+      display: flex;
+      justify-content: space-between;
+      margin: 0 -50px;
+    }
+    .logos {
+      padding: 53px 0 42px;
+    }
+    .info {
+      padding: 36px 0 38px;
+      border-top: 1px solid #c4c4c4;
+    }
+    .logo-link {
+      font-weight: 700;
+      font-size: 22px;
+      line-height: 26px;
+      display: inline-block;
+    }
+    .btns-sns {
+      img {
+        width: 24px;
+        height: 24px;
+        margin-left: 30px;
+      }
+    }
+
+    dl {
+      display: flex;
+      font-size: 14px;
+    }
+    dt {
+      float: left;
+      font-weight: 700;
+      color: #4f4f4f;
+      margin-right: 0.5em;
+      &:first-child::after {
+        content: "";
+        display: inline-block;
+        width: 1px;
+        height: 1em;
+        margin-left: 0.5em;
+        vertical-align: bottom;
+        background-color: #4f4f4f;
+      }
+    }
+    dd {
+      font-weight: 500;
+      &:last-child::after {
+        display: none;
+      }
+      &::after {
+        content: "";
+        display: inline-block;
+        width: 1px;
+        height: 1em;
+        margin: 0 0.5em;
+        vertical-align: bottom;
+        background-color: #4f4f4f;
+      }
+    }
+  }
+}
