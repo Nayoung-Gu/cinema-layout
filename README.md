@@ -18,13 +18,14 @@
 1. Sass 코드 정리 <br>
   👉 font-family, 색상(bg, border) 외에 font-weight, font-size 등을 포함하여 Maps로 키와 값을 정리하여 적용할 예정이다. <br>
   👉 movie-box의 중첩이 길어져, 가독성 확보를 위해서 컴파일된 css 파일과 비교해 코드를 정리할 예정이다.
+  👉 진행 상황(5.2): HTML, Scss 1차 코드 정리 완료 / 추후 변수 분류 예정
   <br>
   
 2. 영화 정보의 개요, 평점 부분 <br>
   👉 이슈: dt, dd로 넣은 정보들 중 개요, 평점만 일렬로 정렬해야 하는 부분을 구현하기 위한 최선의 코드를 찾지 못했다. <br>
-  👉 진행 상황: float, grid로 각각 구현해보려고 했는데 원래 의도대로 결과가 나오지 않아 flex로 처리를 해놓은 상황 (불필요한 태그가 많아진 단점 발생) <br>
-  👉 해결(예정): 포괄적인 하나의 dl 태그가 아닌 각각의 dt, dd마다 dl을 적용한 뒤 grid 적용을 시도할 예정이다.
+  👉 진행 상황(5.1): float, grid로 각각 구현해보려고 했는데 원래 의도대로 결과가 나오지 않아 flex로 처리를 해놓은 상황 <br>
+  👉 해결(5.2): 스타일링 목적이므로 각각의 dt, dd마다 div로 감싸 평점(`div class="rating"`)에 float을 적용하고, 개봉(`div class="release"`에 `"clear:both"` 처리)
 <br>
 
 ## 🔎 실제 구현 화면
-![image](https://user-images.githubusercontent.com/80025366/166142132-d4e12489-c07f-4575-a553-92e19f6a2a30.png)
+![image](https://user-images.githubusercontent.com/80025366/166187742-73980208-5e2f-41b5-8847-4e4694e9bdd3.png)
