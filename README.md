@@ -17,7 +17,7 @@
 
 1. Sass 코드 정리 <br>
   👉 font-family, 색상(bg, border) 외에 font-weight, font-size 등을 포함하여 Maps로 키와 값을 정리하여 적용할 예정이다. <br>
-  👉 movie-box의 중첩이 길어져, 가독성 확보를 위해서 컴파일된 css 파일과 비교해 코드를 정리할 예정이다.
+  👉 movie-box의 중첩이 길어져, 가독성 확보를 위해서 컴파일된 css 파일과 비교해 코드를 정리할 예정이다. <br>
   👉 진행 상황(5.2): HTML, Scss 1차 코드 정리 완료 / 추후 변수 분류 예정
   <br>
   
