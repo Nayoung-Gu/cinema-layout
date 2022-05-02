@@ -25,11 +25,13 @@ body {
   border-bottom: 2px solid #bdbdbd;
   padding: 41px 0 37px;
   margin: 0 auto;
+  font-family: "Roboto";
 }
 
 .section .btns-nav {
   width: 372px;
   margin: 28px auto;
+  font-family: "Roboto";
 }
 
 .section .btns-nav ul {
@@ -48,11 +50,6 @@ body {
 .section .btns-nav ul li:nth-child(1) button {
   font-weight: 900;
   color: #000;
-}
-
-.txt-tit,
-.btns-nav {
-  font-family: "Roboto";
 }
 
 .wrapper {
@@ -90,13 +87,6 @@ body {
   padding-left: 20px;
 }
 
-.movie-box .first-row-wrap {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (1fr)[2];
-      grid-template-columns: repeat(2, 1fr);
-}
-
 .movie-box img {
   width: 180px;
   height: 250px;
@@ -114,6 +104,18 @@ body {
   font-weight: 400;
 }
 
+.movie-box dl .genre {
+  float: left;
+}
+
+.movie-box dl .rating {
+  float: right;
+}
+
+.movie-box dl .release {
+  clear: both;
+}
+
 .movie-box dl dt {
   color: #828282;
   float: left;
@@ -127,7 +129,7 @@ body {
   overflow: hidden;
 }
 
-.movie-box dl dd.rating::before {
+.movie-box dl dd.rating-num::before {
   content: "";
   display: inline-block;
   background: url("../images/별점이미지.png") no-repeat center;
