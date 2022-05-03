@@ -7,8 +7,12 @@ body {
   padding-top: 100px;
 }
 
+.hidden {
+  display: none;
+}
+
 .section {
-  width: 1020px;
+  max-width: 1020px;
   background-color: $bgColor;
   margin: 0 auto;
   border: 1px solid $borderColor;
@@ -21,7 +25,7 @@ body {
     font-size: 24px;
     line-height: 28px;
     text-align: center;
-    width: 650px;
+    max-width: 650px;
     border-bottom: 2px solid $borderColor;
     padding: 41px 0 37px;
     margin: 0 auto;
@@ -38,6 +42,10 @@ body {
       li button {
         color: #828282;
       }
+        li button:hover {
+          font-weight: 900;
+          color: #000;
+      }
       li:nth-child(1) button {
         font-weight: 900;
         color: #000;
@@ -47,7 +55,6 @@ body {
 }
 
 .wrapper {
-  width: 1015px;
   background-color: #fff;
   padding: 26px;
   box-sizing: border-box;
@@ -56,7 +63,6 @@ body {
   gap: 23px;
   border: 1px solid $borderColor;
   border-radius: 10px;
-  margin: 0 auto;
 }
 
 .movie-box {
@@ -67,11 +73,15 @@ body {
   overflow: hidden;
   height: 100%;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  margin: 0 auto;
   .movie-tit {
     font-family: nth($fonts, 2);
     font-weight: 900;
     line-height: 23px;
     padding-left: 20px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
   }
   img {
     width: 180px;
@@ -89,11 +99,9 @@ body {
     .genre {
       float: left;
     }
-    
     .rating {
       float: right;
     }
-    
     .release {
       clear: both;
     }
@@ -149,19 +157,21 @@ body {
 
 
 .footer {
-  width: 100%;
-  background-color: $bgColor;
   font-family: nth($fonts, 1);
+  background-color: $bgColor;
   margin: 0;
-  padding: 0;
+  padding: 0 50px;
   .footer-wrapper {
-    width: 1003px;
+    min-width: 500px;
+    max-width: 1003px;
     margin: 0 auto;
     .logos,
     .info {
+      width: 100%;
       display: flex;
       justify-content: space-between;
-      margin: 0 -50px;
+      margin: 0 -20px;
+      line-height: 1.2;
     }
     .logos {
       padding: 53px 0 42px;
@@ -169,12 +179,16 @@ body {
     .info {
       padding: 36px 0 38px;
       border-top: 1px solid #c4c4c4;
+      .copyright {
+        width: 900px;
+        flex-basis: 20%;
+        text-align: right;
+      }
     }
     .logo-link {
       font-weight: 700;
       font-size: 22px;
       line-height: 26px;
-      display: inline-block;
     }
     .btns-sns {
       img {
@@ -185,6 +199,8 @@ body {
     }
     dl {
       display: flex;
+      flex-wrap: wrap;
+      flex-basis: 80%;
       font-size: 14px;
     }
     dt {
@@ -204,6 +220,7 @@ body {
     }
     dd {
       font-weight: 500;
+      color: #4f4f4f;
       &:last-child::after {
         display: none;
       }

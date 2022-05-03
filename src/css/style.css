@@ -4,8 +4,12 @@ body {
   padding-top: 100px;
 }
 
+.hidden {
+  display: none;
+}
+
 .section {
-  width: 1020px;
+  max-width: 1020px;
   background-color: #f2f2f2;
   margin: 0 auto;
   border: 1px solid #bdbdbd;
@@ -21,7 +25,7 @@ body {
   font-size: 24px;
   line-height: 28px;
   text-align: center;
-  width: 650px;
+  max-width: 650px;
   border-bottom: 2px solid #bdbdbd;
   padding: 41px 0 37px;
   margin: 0 auto;
@@ -47,13 +51,17 @@ body {
   color: #828282;
 }
 
+.section .btns-nav ul li button:hover {
+  font-weight: 900;
+  color: #000;
+}
+
 .section .btns-nav ul li:nth-child(1) button {
   font-weight: 900;
   color: #000;
 }
 
 .wrapper {
-  width: 1015px;
   background-color: #fff;
   padding: 26px;
   -webkit-box-sizing: border-box;
@@ -66,7 +74,6 @@ body {
   gap: 23px;
   border: 1px solid #bdbdbd;
   border-radius: 10px;
-  margin: 0 auto;
 }
 
 .movie-box {
@@ -78,6 +85,7 @@ body {
   height: 100%;
   -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
           box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  margin: 0 auto;
 }
 
 .movie-box .movie-tit {
@@ -85,6 +93,9 @@ body {
   font-weight: 900;
   line-height: 23px;
   padding-left: 20px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .movie-box img {
@@ -171,27 +182,29 @@ body {
 }
 
 .footer {
-  width: 100%;
-  background-color: #f2f2f2;
   font-family: "Roboto";
+  background-color: #f2f2f2;
   margin: 0;
-  padding: 0;
+  padding: 0 50px;
 }
 
 .footer .footer-wrapper {
-  width: 1003px;
+  min-width: 500px;
+  max-width: 1003px;
   margin: 0 auto;
 }
 
 .footer .footer-wrapper .logos,
 .footer .footer-wrapper .info {
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin: 0 -50px;
+  margin: 0 -20px;
+  line-height: 1.2;
 }
 
 .footer .footer-wrapper .logos {
@@ -203,11 +216,17 @@ body {
   border-top: 1px solid #c4c4c4;
 }
 
+.footer .footer-wrapper .info .copyright {
+  width: 900px;
+  -ms-flex-preferred-size: 20%;
+      flex-basis: 20%;
+  text-align: right;
+}
+
 .footer .footer-wrapper .logo-link {
   font-weight: 700;
   font-size: 22px;
   line-height: 26px;
-  display: inline-block;
 }
 
 .footer .footer-wrapper .btns-sns img {
@@ -220,6 +239,10 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-preferred-size: 80%;
+      flex-basis: 80%;
   font-size: 14px;
 }
 
@@ -242,6 +265,7 @@ body {
 
 .footer .footer-wrapper dd {
   font-weight: 500;
+  color: #4f4f4f;
 }
 
 .footer .footer-wrapper dd:last-child::after {
