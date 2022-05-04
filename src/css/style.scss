@@ -1,11 +1,18 @@
 $bgColor: #f2f2f2;
-$borderColor: #bdbdbd;
+$borderColor: ("light":#828282, "dark":#bdbdbd);
+$divideColor: #4f4f4f;
 $fonts: "Roboto", "Noto Sans KR";
 
 body {
   background-color: #fff;
   padding-top: 100px;
   overflow: hidden scroll;
+}
+
+%ellipsis {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .hidden {
@@ -16,7 +23,7 @@ body {
   max-width: 1020px;
   background-color: $bgColor;
   margin: 0 auto;
-  border: 1px solid $borderColor;
+  border: 1px solid map.get($borderColor, "dark");
   border-radius: 10px;
   padding: 0 28px 31px;
   margin-bottom: 166px;
@@ -27,30 +34,30 @@ body {
     line-height: 28px;
     text-align: center;
     max-width: 650px;
-    border-bottom: 2px solid $borderColor;
+    border-bottom: 2px solid map.get($borderColor, "dark");
     padding: 41px 0 37px;
     margin: 0 auto;
     font-family: nth($fonts, 1);
   }
-  .btns-nav {
-    width: 372px;
-    margin: 28px auto;
-    font-family: nth($fonts, 1);
-    ul {
-      display: flex;
-      justify-content: space-around;
-      color: #828282;
-      li button {
-        color: #828282;
-      }
-        li button:hover {
-          font-weight: 900;
-          color: #000;
-      }
-      li:nth-child(1) button {
+}
+
+.btns-nav {
+  width: 372px;
+  margin: 28px auto;
+  font-family: nth($fonts, 1);
+  ul {
+    display: flex;
+    justify-content: space-around;
+    li button {
+      color: map-get($borderColor, "light");
+      &:hover {
         font-weight: 900;
         color: #000;
-      }
+    }
+  }
+    li:nth-child(1) button {
+      font-weight: 900;
+      color: #000;
     }
   }
 }
@@ -62,14 +69,14 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 23px;
-  border: 1px solid $borderColor;
+  border: 1px solid map.get($borderColor, "dark");
   border-radius: 10px;
 }
 
 .movie-box {
   width: 220px;
   background-color: #fff;
-  border: 1px solid $borderColor;
+  border: 1px solid map.get($borderColor, "dark");
   border-radius: 10px;
   overflow: hidden;
   height: 100%;
@@ -79,7 +86,7 @@ body {
   transition: all 0.3s ease-in-out;
   &:hover {
     transform: translateY(-10px);
-    border: 1px solid #828282;
+    border: 1px solid map-get($borderColor, "light");
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
   }
   .movie-tit {
@@ -87,9 +94,7 @@ body {
     font-weight: 900;
     line-height: 23px;
     padding-left: 20px;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
+    @extend %ellipsis;
   }
   img {
     width: 180px;
@@ -114,15 +119,13 @@ body {
       clear: both;
     }
     dt {
-      color: #828282;
+      color: map-get($borderColor, "light");
       float: left;
       margin-right: 5px;
     }
     dd {
       color: #000;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-      overflow: hidden;
+      @extend %ellipsis;
       &.rating-num::before {
         content: "";
         display: inline-block;
@@ -141,14 +144,14 @@ body {
     font-size: 14px;
     line-height: 20px;
     text-align: center;
-    border-top: 1px solid $borderColor;
+    border-top: 1px solid map.get($borderColor, "dark");
     padding: 9px;
     box-sizing: border-box;
     background-color: $bgColor;
     position: relative;
     font-family: nth($fonts, 2);
     &.btn-book {
-      border-right: 1px solid $borderColor;
+      border-right: 1px solid map.get($borderColor, "dark");
     }
     &.btn-preview::before {
       content: "";
@@ -213,7 +216,7 @@ body {
     dt {
       float: left;
       font-weight: 700;
-      color: #4f4f4f;
+      color: $divideColor;
       margin-right: 0.5em;
       &:first-child::after {
         content: "";
@@ -222,12 +225,12 @@ body {
         height: 1em;
         margin-left: 0.5em;
         vertical-align: bottom;
-        background-color: #4f4f4f;
+        background-color: $divideColor;
       }
     }
     dd {
       font-weight: 500;
-      color: #4f4f4f;
+      color: $divideColor;
       &:last-child::after {
         display: none;
       }
@@ -238,7 +241,7 @@ body {
         height: 1em;
         margin: 0 0.5em;
         vertical-align: bottom;
-        background-color: #4f4f4f;
+        background-color: $divideColor;
       }
     }
   }

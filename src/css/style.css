@@ -5,6 +5,12 @@ body {
   overflow: hidden scroll;
 }
 
+.movie-box .movie-tit, .movie-box dl dd {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
 .hidden {
   display: none;
 }
@@ -33,31 +39,30 @@ body {
   font-family: "Roboto";
 }
 
-.section .btns-nav {
+.btns-nav {
   width: 372px;
   margin: 28px auto;
   font-family: "Roboto";
 }
 
-.section .btns-nav ul {
+.btns-nav ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+}
+
+.btns-nav ul li button {
   color: #828282;
 }
 
-.section .btns-nav ul li button {
-  color: #828282;
-}
-
-.section .btns-nav ul li button:hover {
+.btns-nav ul li button:hover {
   font-weight: 900;
   color: #000;
 }
 
-.section .btns-nav ul li:nth-child(1) button {
+.btns-nav ul li:nth-child(1) button {
   font-weight: 900;
   color: #000;
 }
@@ -105,9 +110,6 @@ body {
   font-weight: 900;
   line-height: 23px;
   padding-left: 20px;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
 }
 
 .movie-box img {
@@ -147,9 +149,6 @@ body {
 
 .movie-box dl dd {
   color: #000;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
 }
 
 .movie-box dl dd.rating-num::before {
